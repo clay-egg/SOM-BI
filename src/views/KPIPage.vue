@@ -7,6 +7,6 @@
 
 <script>
 export default {
-  name: "KPI",
+  name: "KPIPage",
 };
 </script>

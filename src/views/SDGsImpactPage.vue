@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>KPI</h1>
+    <h1>SDGs Impact</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "KPI",
+  name: "SDGsImpactPage",
 };
 </script>

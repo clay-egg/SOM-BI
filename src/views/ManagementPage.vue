@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>KPI</h1>
+    <h1>Management</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "KPI",
+  name: "ManagementPage",
 };
 </script>
