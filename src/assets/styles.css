@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  #app {
+    padding-top: 50px; /* Matches the app bar height */
+  }
+  
+  .main-content {
+    padding: 16px; /* Consistent spacing for all pages */
+  }
+  

@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
-  { path: "/", name: "Home", component: () => import("../views/Home.vue") },
+  { path: "/", name: "Home", component: () => import("../views/HomePage.vue") },
   { path: "/kpi", name: "KPI", component: () => import("../views/KPI.vue") },
   { path: "/curriculum-statistics", name: "Curriculum Statistics", component: () => import("../views/CurriculumStatistics.vue") },
-  { path: "/research", name: "Research", component: () => import("../views/Research.vue") },
+  { path: "/research", name: "Research", component: () => import("../views/ResearchPage.vue") },
   { path: "/academic-service", name: "Academic Service", component: () => import("../views/AcademicService.vue") },
   { path: "/collaboration", name: "Collaboration", component: () => import("../views/Collaboration.vue") },
   { path: "/faculty-staff", name: "Faculty & Staff", component: () => import("../views/FacultyStaff.vue") },

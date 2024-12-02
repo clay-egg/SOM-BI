@@ -1,7 +1,7 @@
 <template>
   <div :class="['side-panel', { open: isOpen }]">
     <div class="button-list">
-      <button v-for="button in buttons" :key="button.label" @click="button.action">
+      <button v-for="button in buttons" :key="button.label" @click="navigate(button.path)">
         {{ button.label }}
       </button>
     </div>
@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { useRouter } from "vue-router"; // Import the router composable
+
 export default {
   name: "SidePanel",
   props: {
@@ -17,24 +19,34 @@ export default {
       required: true,
     },
   },
-  data() {
+  setup() {
+    const router = useRouter(); // Access the router instance
+
+    const navigate = (path) => {
+      router.push(path); // Navigate to the specified path
+    };
+
+    const buttons = [
+      { label: "Home", path: "/" },
+      { label: "KPI", path: "/kpi" },
+      { label: "Curriculum Statistics", path: "/curriculum-statistics" },
+      { label: "Research", path: "/research" },
+      { label: "Academic Service", path: "/academic-service" },
+      { label: "Collaboration", path: "/collaboration" },
+      { label: "Faculty & Staff", path: "/faculty-staff" },
+      { label: "Alumni", path: "/alumni" },
+      { label: "SDGs Impact", path: "/sdgs-impact" },
+      { label: "Management", path: "/management" },
+    ];
+
     return {
-      buttons: [
-        { label: "Home", action: () => alert("Home clicked") },
-        { label: "KPI", action: () => alert("About clicked") },
-        { label: "Curriculum Statistics", action: () => alert("Contact clicked") },
-        { label: "Research", action: () => alert("Contact clicked") },
-        { label: "Academic Service", action: () => alert("Settings clicked") },
-        { label: "Collaboration", action: () => alert("Home clicked") },
-        { label: "Faculty & Staff", action: () => alert("About clicked") },
-        { label: "Alumni", action: () => alert("Contact clicked") },
-        { label: "SDGs Impace", action: () => alert("Settings clicked") },
-        { label: "Management", action: () => alert("Home clicked") },
-      ],
+      buttons,
+      navigate,
     };
   },
 };
 </script>
+
 
 <style scoped>
 .side-panel {
